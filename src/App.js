@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './component/Hearder/Header';
+import AllRoute from './component/Routing/AllRout';
+import SliderPage from './component/Slider/Slider';
+import "./App.css";
+import { Box } from '@mui/material';
+import ElectronicCard from './component/Cards/Electronics';
+import FashionCard from './component/Cards/Fashion/Fashion';
+import LandingPage from './component/LandingPage/LandingPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box 
+    // sx={{width:"100vw", maxWidth:"100vw", paddingX:"24px"}}
+    >
+      <AllRoute/>
+      <Header/>
+      <SliderPage/>
+      <ElectronicCard/>
+      <LandingPage/>
+      <FashionCard/>
+    </Box>
   );
 }
 
