@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Container, IconButton,Box } from '@mui/material'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
