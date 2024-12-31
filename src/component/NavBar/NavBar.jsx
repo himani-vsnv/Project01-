@@ -63,7 +63,7 @@ const NavBar = () => {
               </IconButton>
           </Link>
           </Box>
-          <Link to="/signup"  style={{ textDecoration: 'none' }}>
+          <Link to=""  style={{ textDecoration: 'none' }}>
             <Typography variant="text"  sx={{ color: "white" }}>
               SignUp
             </Typography>

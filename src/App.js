@@ -5,8 +5,6 @@ import "./App.css";
 import { Box } from '@mui/material';
 import ElectronicCard from './component/Cards/Electronics';
 import FashionCard from './component/Cards/Fashion/Fashion';
-import LandingPage from './component/LandingPage/LandingPage';
-
 
 function App() {
   return (
@@ -17,7 +15,6 @@ function App() {
       <Header/>
       <SliderPage/>
       <ElectronicCard/>
-      <LandingPage/>
       <FashionCard/>
     </Box>
   );

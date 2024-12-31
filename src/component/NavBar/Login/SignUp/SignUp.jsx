@@ -13,7 +13,10 @@ const SignUp = () => {
         setSignUpData({...signUpData,[e.target.name]:e.target.value})
     }
 
-   
+    useEffect(() => {
+      PostApiSignUp()
+    },[])
+    
     const PostApiSignUp = async() => {
         const resp = await axios.post("http://192.168.1.62:5000/api/auth/signup",signUpData)
         .then((resp)=>{

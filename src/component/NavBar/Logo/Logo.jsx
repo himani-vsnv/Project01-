@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Image } from "@mui/icons-material";
 import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
