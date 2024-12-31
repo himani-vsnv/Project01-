@@ -7,14 +7,12 @@ import { Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { IconButton, Typography } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SignUp from "./Login/SignUp/SignUp";
+
 
 const NavBar = () => {
   return (
     <>
       <AppBar
-       
-       
         sx={{
           position:"fixed",
           top:"0",
