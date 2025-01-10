@@ -21,7 +21,9 @@ const NavBar = () => {
           alignItems: "center",
           justifyContent: "center",
           height: "56px",
-          boxShadow:"none"
+          boxShadow:"none",
+          width: "full",
+          padding:  "4px",
         }}
       >
         <Box
@@ -30,8 +32,8 @@ const NavBar = () => {
             alignItems: "center",
             justifyContent: "center",
             height: "fit-content",
-            width: "1248px",
-            gap: "40px",
+            width: "100%",
+            gap: "30px",
             margin: "4px",
           }}
         >

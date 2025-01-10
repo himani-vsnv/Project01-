@@ -2,8 +2,7 @@
 import { Container, IconButton,Box } from '@mui/material'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-// import axios from 'axios'
-import React, { useEffect, useRef, useState } from 'react'
+import React ,{ useEffect, useRef, useState } from 'react'
 import data from './data.json'
 
 const SliderPage = () => {
@@ -12,40 +11,27 @@ const SliderPage = () => {
     let ref = useRef(null);
     console.log('data',data)
     
-    // useEffect(()=>{
-    //   const resp =  axios.get("https://picsum.photos/v2/list?page=1&limit=15")
-    //     .then((resp) => setImages(resp.data))
-    // },[])
+    useEffect(() => {
+        ref.current = setInterval(handleNext, 3000);
+        return () => {
+          clearInterval(ref.current); 
+        };
+      }, []);
 
     const handleNext = () => {
-
-        setActiveIndex((previousValue)=>{
-            if(previousValue == data.length-1){
-                   
-                   return 0;
-                }
-                else{
-                    return previousValue +1;
-                }
-        })
-        // if(activeIndex > data.lenght-1){
-        //     setActiveIndex(1)  
-        // }
-        // else{
-        //     setActiveIndex(activeIndex +1)
-        // }
-    }
-    const handleprev = () => {
-        if(activeIndex == 0){
-            setActiveIndex(data.lenght-1)  
-        }
-        else{
-            setActiveIndex(activeIndex -1)
-        }
-    }
+        setActiveIndex((previousValue) =>
+          previousValue === data.length - 1 ? 0 : previousValue + 1
+        );
+      };
+      
+      const handlePrev = () => {
+        setActiveIndex((previousValue) =>
+          previousValue === 0 ? data.length - 1 : previousValue - 1
+        );
+      };
 
     useEffect(() => {
-      ref.current =  setInterval(handleNext,100000)
+      ref.current =  setInterval(handleNext,3000)
       return (()=>{
         clearInterval(ref.current)
       })
@@ -54,14 +40,18 @@ const SliderPage = () => {
     // console.log('activeIndex',activeIndex)
   return (
     <Container   sx={{display:"flex", justifyContent:'center', alignItems:"center", width:"100%", position:"relative",marginTop:"30px"}}>
-        <Box sx={{display:"flex", justifyContent:'center', alignItems:"center",height:'300px' ,width:"1530px" }} onMouseEnter = {() => clearInterval(ref.current)} onMouseLeave={() => ref.current =  setInterval(handleNext,100000)}>
+        <Box sx={{display:"flex", justifyContent:'center', alignItems:"center",height:'300px' ,width:"1530px" }} onMouseEnter={() => clearInterval(ref.current)} // Pause auto-scroll
+  onMouseLeave={() => (ref.current = setInterval(handleNext, 3000))}>
        
        <Box sx={{position:'absolute' , top:"40%",left:"10px"}}>
            <IconButton sx={{backgroundColor:"white"}} size="large"><ArrowLeftIcon onClick={handleNext}/></IconButton>
        </Box>             
-           <Box><img  style={{height:'280px' ,width:"1530px"}} src='https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/cc633426b89ad841.png?q=20'/></Box>           
+           <Box><img  style={{height:'280px' ,width:"100%", }}
+            src={data[activeIndex]?.download_url} 
+            />
+            </Box>           
        <Box sx={{position:'absolute' , top:"40%",right:"2px"}}>
-           <IconButton  sx={{backgroundColor:"white"}} size="large"> <ArrowRightIcon onClick={handleprev}/></IconButton>
+           <IconButton  sx={{backgroundColor:"white"}} size="large"> <ArrowRightIcon onClick={handlePrev}/></IconButton>
        </Box>
   
         </Box>
@@ -70,6 +60,3 @@ const SliderPage = () => {
 }
 
 export default SliderPage
-
-
- //{data[activeIndex].download_url}  --> image 

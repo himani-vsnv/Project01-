@@ -16,7 +16,7 @@ const ElectronicCard = () => {
                        {name:"Best Truewireless Headphones",subTitle:"shop now", image:"https://rukminim2.flixcart.com/image/420/420/l58iaa80/headphone/k/z/m/nord-buds-ce-oneplus-original-imagfyk4hyvgg6ze.jpeg?q=60"},
                        {name:"Noise Smartwatches",subTitle:"From 1499*", image:"https://rukminim2.flixcart.com/flap/420/420/image/24ed491dc3ff9e8a.jpg?q=60"},
                        {name:"Best Truewireless Headphones",subTitle:"shop now", image:"https://rukminim2.flixcart.com/image/420/420/l58iaa80/headphone/k/z/m/nord-buds-ce-oneplus-original-imagfyk4hyvgg6ze.jpeg?q=60"},
-                       {name:"Noise Smartwatches",subTitle:"From 1499*", image:"https://rukminim2.flixcart.com/flap/420/420/image/24ed491dc3ff9e8a.jpg?q=60"},
+                      //  {name:"Noise Smartwatches",subTitle:"From 1499*", image:"https://rukminim2.flixcart.com/flap/420/420/image/24ed491dc3ff9e8a.jpg?q=60"},
                        
   ]
   
